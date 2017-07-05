@@ -39,7 +39,6 @@
 ;;    Last-Updated: Mon Sep 20 09:11:13 2010 (-0500) #14 (Matthew L. Fidler)
 ;;    Added provide and some explanation of how to use.
 ;; 
-;; 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; 
 ;; This program is free software; you can redistribute it and/or
@@ -61,6 +60,7 @@
 ;; 
 ;;; Code:
 (require 'linum)
+(require 'linum-relative)
 
 (defcustom linum-disabled-modes-list '(eshell-mode wl-summary-mode compilation-mode org-mode text-mode dired-mode pdf-view-mode)
   "* List of modes disabled when global linum mode is on"
@@ -79,7 +79,9 @@
   (unless (or (minibufferp) (member major-mode linum-disabled-modes-list)
               (and linum-disable-starred-buffers (string-match "*" (buffer-name)))
               )
-    (linum-mode 1)))
+     (progn
+      (linum-mode 1)
+      (linum-relative-on)))
 
 (provide 'linum-off)
 

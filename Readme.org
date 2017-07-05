@@ -1,6 +1,6 @@
 #+TITLE: Linum-off 
 #+AUTHOR: Matthew L. Fidler
-Linum-off is made to turn off global line numbering in specified
+Linum-off is made to turn off regular and relative global line numbering in specified
 modes.  
 
 To use, put this in your =.emacs= or =.emacs.d/init.el=
